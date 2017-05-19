@@ -98,9 +98,9 @@ static dispatch_queue_t OSSClientQueue;
     }
     
     NSString *userName = [[NSUserDefaults standardUserDefaults] stringForKey:MG_user_name];
-//    if (!userName) {
+    if (!userName) {
         userName = @"000";
-//    }
+    }
     NSString *folderName = [strDate substringWithRange:NSMakeRange(2, 6)];
     return [NSString stringWithFormat:@"RGBLite_images/%@/iOS_%@_%@_%@_%@.jpg",folderName,version,strDate,string,userName];
 }

@@ -122,7 +122,6 @@
 		093374C91ECD8EAD005AC61A /* MGImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGImageData.h; sourceTree = "<group>"; };
 		093374CC1ECDA2C5005AC61A /* scan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scan.gif; sourceTree = "<group>"; };
 		093374CE1ECDA651005AC61A /* unLockLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unLockLogo.png; sourceTree = "<group>"; };
-		093374D41ECDBDDD005AC61A /* megviifacepp_0_4_7_model */ = {isa = PBXFileReference; lastKnownFileType = file; name = megviifacepp_0_4_7_model; path = ../../MGFacepp/MegviiFacepp_C_SDK/megviifacepp_0_4_7_model; sourceTree = "<group>"; };
 		140604FC1D8E5EE600D71080 /* MGBaseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MGBaseKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/V2SDKDemo-epjzkrsxflxuxtfbehqbuzoevuka/Build/Products/Debug-iphoneos/MGBaseKit.framework"; sourceTree = "<group>"; };
 		1411508F1E9CC9B70016800E /* 81_points_position.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 81_points_position.jpg; sourceTree = "<group>"; };
 		141150931E9DEDA40016800E /* skin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skin.png; sourceTree = "<group>"; };
@@ -317,7 +316,6 @@
 		141999811D7D690D0029032F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				093374D41ECDBDDD005AC61A /* megviifacepp_0_4_7_model */,
 				140604FC1D8E5EE600D71080 /* MGBaseKit.framework */,
 				140605001D8E5F1000D71080 /* MGFaceppSDK */,
 				1432ED631E24B27500131E39 /* CoreMotion.framework */,
