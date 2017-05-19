@@ -36,30 +36,20 @@ static dispatch_queue_t OSSClientQueue;
 }
 
 // 异步上传
-- (void)uploadData:(NSData *)data {
-//    if (_uploading) {
-//        return;
-//    } else {
-//        _uploading = YES;
-//    }
+- (void)uploadData:(NSData *)data{
+    [self uploadData:data old:NO];
+}
+
+- (void)uploadData:(NSData *)data old:(BOOL)old{
     OSSPutObjectRequest * put = [OSSPutObjectRequest new];
-    
-    // required fields
-    
-    
-    
+
     put.bucketName = bucket;
-    put.objectKey = [self fileName];
+    put.objectKey = [self fileName:old];
     put.uploadingData = data;
     
-    // optional fields
     put.uploadProgress = ^(int64_t bytesSent, int64_t totalByteSent, int64_t totalBytesExpectedToSend) {
         NSLog(@"%lld, %lld, %lld", bytesSent, totalByteSent, totalBytesExpectedToSend);
     };
-//    put.contentType = @"";
-//    put.contentMd5 = @"";
-//    put.contentEncoding = @"";
-//    put.contentDisposition = @"";
     
     OSSTask * putTask = [client putObject:put];
     
@@ -74,7 +64,7 @@ static dispatch_queue_t OSSClientQueue;
     }];
 }
 
-- (NSString *)fileName{
+- (NSString *)fileName:(BOOL)old{
     // [Android/iOS]_[系统版本号]_[上传日期YYMMDDhhmmss]_[随机6个字符]_[用户id].jpg
     NSString *version = [[UIDevice currentDevice] systemVersion];
     
@@ -102,7 +92,12 @@ static dispatch_queue_t OSSClientQueue;
         userName = @"000";
     }
     NSString *folderName = [strDate substringWithRange:NSMakeRange(2, 6)];
-    return [NSString stringWithFormat:@"RGBLite_images/%@/iOS_%@_%@_%@_%@.jpg",folderName,version,strDate,string,userName];
+    if (old) {
+        return [NSString stringWithFormat:@"RGBLite_images/%@/iOS_%@_%@_%@_reg_%@.jpg",folderName,version,strDate,string,userName];
+    } else {
+        return [NSString stringWithFormat:@"RGBLite_images/%@/iOS_%@_%@_%@_%@.jpg",folderName,version,strDate,string,userName];
+    }
 }
+
 
 @end

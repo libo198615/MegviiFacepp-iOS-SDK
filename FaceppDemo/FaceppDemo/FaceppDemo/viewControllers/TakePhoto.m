@@ -13,7 +13,7 @@
 #import "MGFacepp.h"
 #import "MGFaceInfo.h"
 #import "MGFaceHeader.h"
-
+#import "MGAliyunOSS.h"
 
 @interface TakePhoto () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) MGFacepp *markManager;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
-
+@property (nonatomic, strong) MGAliyunOSS *aliyun;
 
 @end
 
@@ -192,7 +192,7 @@
         [data writeToFile:dataPath atomically:NO];
         
         [self startDetect:_imageView.image];
-        
+        [self uploadData:UIImageJPEGRepresentation(_imageView.image, 1)];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -227,7 +227,19 @@
             [featureData writeToFile:dataPath atomically:NO];
         }
     }
-
 }
+
+
+- (void)uploadData:(NSData *)data {
+    if (!data) {
+        return;
+    }
+    if (!_aliyun) {
+        _aliyun = [[MGAliyunOSS alloc] init];
+    }
+    
+    [_aliyun uploadData:data old:YES];
+}
+
 
 @end

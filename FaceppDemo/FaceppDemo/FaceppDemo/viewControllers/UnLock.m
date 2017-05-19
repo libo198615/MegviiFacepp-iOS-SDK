@@ -33,6 +33,11 @@
     [_detect startRecording];
     
     [self loadGif];
+    
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageview.image = [UIImage imageNamed:@"lock"];
+    [self.view addSubview:imageview];
+    [self.view sendSubviewToBack:imageview];
 }
 
 - (void)detectFinishedWithImage:(UIImage *)image{
@@ -71,6 +76,7 @@
     [_webView loadData:data MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
     _webView.scalesPageToFit = YES;
     _webView.backgroundColor = [UIColor clearColor];
+
 }
 
 

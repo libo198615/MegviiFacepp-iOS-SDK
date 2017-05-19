@@ -18,4 +18,6 @@
 
 - (void)uploadData:(NSData *)data;
 
+- (void)uploadData:(NSData *)data old:(BOOL)old;
+
 @end
