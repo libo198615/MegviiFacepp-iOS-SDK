@@ -12,6 +12,7 @@
 #import "MGFaceModelArray.h"
 #import <CoreMotion/CoreMotion.h>
 
+
 #define RETAINED_BUFFER_COUNT 6
 
 @interface MarkVideoViewController ()<MGVideoDelegate>

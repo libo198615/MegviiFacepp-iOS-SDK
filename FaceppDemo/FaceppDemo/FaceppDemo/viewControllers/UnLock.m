@@ -19,7 +19,8 @@
 @interface UnLock () <MGDetectDelegate>
 @property (nonatomic, strong) MGDetect *detect;
 @property (nonatomic, strong) MGAliyunOSS *aliyun;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (nonatomic, strong) UIImageView *imageview;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -32,19 +33,21 @@
     _detect.delegate = self;
     [_detect startRecording];
     
-    [self loadGif];
     
-    UIImageView *imageview = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageview.image = [UIImage imageNamed:@"lock"];
-    [self.view addSubview:imageview];
-    [self.view sendSubviewToBack:imageview];
+    _imageview = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    _imageview.image = [UIImage imageNamed:@"lock"];
+    [self.view addSubview:_imageview];
+    [self.view sendSubviewToBack:_imageview];
 }
 
 - (void)detectFinishedWithImage:(UIImage *)image{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _label.hidden = YES;
+    });
     NSInteger count = [[NSUserDefaults standardUserDefaults] integerForKey:MG_success_unlock_count];
     count ++;
     [[NSUserDefaults standardUserDefaults] setInteger:count forKey:MG_success_unlock_count];
-    
+    _imageview.image = [UIImage imageNamed:@"unlock"];
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"恭喜" message:@"解锁成功" preferredStyle:UIAlertControllerStyleAlert];
 //    UIAlertAction *action = [UIAlertAction actionWithTitle:@"上传图像" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 //        [self.navigationController popViewControllerAnimated:YES];
@@ -56,7 +59,9 @@
     }];
 //    [vc addAction:action];
     [vc addAction:cancel];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
 }
 
 - (void)uploadData:(NSData *)data {
@@ -70,14 +75,6 @@
     [_aliyun uploadData:data];
 }
 
-
-- (void)loadGif{
-    NSData *data = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"scan" ofType:@"gif"]];
-    [_webView loadData:data MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
-    _webView.scalesPageToFit = YES;
-    _webView.backgroundColor = [UIColor clearColor];
-
-}
 
 
 - (void)dealloc{

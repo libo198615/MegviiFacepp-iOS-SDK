@@ -9,12 +9,15 @@
 #import "UnLockDemo.h"
 #import "MGFaceHeader.h"
 
+#define MGColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface UnLockDemo ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIButton *takePhotoBtn;
 @property (weak, nonatomic) IBOutlet UIButton *unlockBtn;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 
 @end
@@ -24,9 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _unlockBtn.userInteractionEnabled = NO;
-    _unlockBtn.backgroundColor = [UIColor grayColor];
-    _takePhotoBtn.backgroundColor = [UIColor blueColor];
+    
     
     if ([[NSUserDefaults standardUserDefaults] integerForKey:MG_success_unlock_count]) {
         _label.text = [NSString stringWithFormat:@"成功解锁次数: %ld",[[NSUserDefaults standardUserDefaults] integerForKey:MG_success_unlock_count]];
@@ -34,6 +35,22 @@
         _label.text = @"成功解锁次数：0";
         [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:MG_success_unlock_count];
     }
+    
+    _takePhotoBtn.layer.masksToBounds = YES;
+    _takePhotoBtn.layer.cornerRadius = 7;
+    _takePhotoBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+    _takePhotoBtn.backgroundColor = MGColorFromRGB(0x21a9e3);
+    _unlockBtn.layer.masksToBounds = YES;
+    _unlockBtn.layer.cornerRadius = 7;
+    _unlockBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+    _unlockBtn.userInteractionEnabled = NO;
+    _unlockBtn.backgroundColor = [UIColor grayColor];
+    _unlockBtn.backgroundColor = MGColorFromRGB(0xc3c3c3);
+    
+    [self loadGif];
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -43,9 +60,18 @@
     if (image) {
         _imageView.image = image;
         _unlockBtn.userInteractionEnabled = YES;
-        _unlockBtn.backgroundColor = [UIColor blueColor];
+        _unlockBtn.backgroundColor = MGColorFromRGB(0x21a9e3);
     }
-    _label.text = [NSString stringWithFormat:@"成功解锁次数: %ld",[[NSUserDefaults standardUserDefaults] integerForKey:MG_success_unlock_count]];
+    NSInteger count = [[NSUserDefaults standardUserDefaults] integerForKey:MG_success_unlock_count];
+    _label.text = [NSString stringWithFormat:@"成功解锁次数: %ld",count];
+    _webView.hidden = _imageView.image ? YES : NO;
+}
+
+- (void)loadGif{
+    NSData *data = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"scan" ofType:@"gif"]];
+    [_webView loadData:data MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+    _webView.scalesPageToFit = YES;
+    _webView.backgroundColor = [UIColor clearColor];
     
 }
 

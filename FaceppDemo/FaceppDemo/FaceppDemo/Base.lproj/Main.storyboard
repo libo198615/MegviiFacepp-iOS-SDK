@@ -283,11 +283,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yo5-Dp-Bx0">
-                                <rect key="frame" x="97.5" y="497" width="180" height="50"/>
+                                <rect key="frame" x="62.5" y="497" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.29032791540000003" green="0.5615996526" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bMH-jA-jbE"/>
-                                    <constraint firstAttribute="width" constant="180" id="ema-SV-DqK"/>
+                                    <constraint firstAttribute="width" constant="250" id="ema-SV-DqK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="录入人脸">
@@ -298,11 +298,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFV-X7-nTr">
-                                <rect key="frame" x="97.5" y="567" width="180" height="50"/>
+                                <rect key="frame" x="62.5" y="567" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.29032791540000003" green="0.5615996526" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SqA-Eg-mnf"/>
-                                    <constraint firstAttribute="width" constant="180" id="dlu-hA-B9n"/>
+                                    <constraint firstAttribute="width" constant="250" id="dlu-hA-B9n"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="体验解锁过程">
@@ -312,14 +312,24 @@
                                     <segue destination="Yc9-qz-tt6" kind="push" id="SYg-py-B4r"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zt6-nL-aJj">
+                                <rect key="frame" x="88" y="164" width="200" height="150"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="73C-E5-yRS"/>
+                                    <constraint firstAttribute="width" constant="200" id="LfX-2D-JGT"/>
+                                </constraints>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Zt6-nL-aJj" firstAttribute="centerX" secondItem="rBz-hm-vPZ" secondAttribute="centerX" id="Ek0-zb-JD5"/>
                             <constraint firstItem="OG4-Ye-3Tg" firstAttribute="top" secondItem="mFV-X7-nTr" secondAttribute="bottom" constant="50" id="Jrd-by-Hob"/>
                             <constraint firstItem="mFV-X7-nTr" firstAttribute="centerX" secondItem="rBz-hm-vPZ" secondAttribute="centerX" id="TNP-Xx-Csv"/>
                             <constraint firstItem="O2g-el-mFa" firstAttribute="top" secondItem="nSS-Zc-KCZ" secondAttribute="bottom" constant="20" id="TwP-Fj-HfA"/>
                             <constraint firstItem="nSS-Zc-KCZ" firstAttribute="centerX" secondItem="rBz-hm-vPZ" secondAttribute="centerX" id="UEr-Al-Oaq"/>
                             <constraint firstItem="O2g-el-mFa" firstAttribute="centerX" secondItem="rBz-hm-vPZ" secondAttribute="centerX" id="WMy-ae-SNC"/>
+                            <constraint firstItem="Zt6-nL-aJj" firstAttribute="top" secondItem="Xkc-gr-7YH" secondAttribute="bottom" constant="100" id="Zc2-bv-Zw2"/>
                             <constraint firstItem="yo5-Dp-Bx0" firstAttribute="centerX" secondItem="rBz-hm-vPZ" secondAttribute="centerX" id="nPh-6J-SLa"/>
                             <constraint firstItem="mFV-X7-nTr" firstAttribute="top" secondItem="yo5-Dp-Bx0" secondAttribute="bottom" constant="20" id="ntm-au-vwx"/>
                             <constraint firstItem="nSS-Zc-KCZ" firstAttribute="top" secondItem="Xkc-gr-7YH" secondAttribute="bottom" constant="50" id="y0m-vx-xiL"/>
@@ -331,6 +341,7 @@
                         <outlet property="label" destination="O2g-el-mFa" id="21o-k0-Nbz"/>
                         <outlet property="takePhotoBtn" destination="yo5-Dp-Bx0" id="0gJ-85-var"/>
                         <outlet property="unlockBtn" destination="mFV-X7-nTr" id="vmh-WI-YH4"/>
+                        <outlet property="webView" destination="Zt6-nL-aJj" id="tZL-Sf-hGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IQ-eo-jA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -366,11 +377,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84W-0q-FgS">
-                                <rect key="frame" x="137" y="602" width="100" height="45"/>
+                                <rect key="frame" x="62" y="572" width="250" height="45"/>
                                 <color key="backgroundColor" red="0.29032791540000003" green="0.5615996526" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="CRq-gJ-bHJ"/>
-                                    <constraint firstAttribute="width" constant="100" id="g6N-CR-jeI"/>
+                                    <constraint firstAttribute="width" constant="250" id="g6N-CR-jeI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="保存">
@@ -384,7 +395,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Tks-nD-3F8" firstAttribute="top" secondItem="yh5-iF-Xee" secondAttribute="bottom" constant="50" id="6I7-75-Hx8"/>
-                            <constraint firstItem="YaL-Rh-1t8" firstAttribute="top" secondItem="84W-0q-FgS" secondAttribute="bottom" constant="20" id="Is4-ma-wB6"/>
+                            <constraint firstItem="YaL-Rh-1t8" firstAttribute="top" secondItem="84W-0q-FgS" secondAttribute="bottom" constant="50" id="Is4-ma-wB6"/>
                             <constraint firstItem="84W-0q-FgS" firstAttribute="centerX" secondItem="HTM-JE-5x5" secondAttribute="centerX" id="RxC-jz-UaU"/>
                             <constraint firstAttribute="trailing" secondItem="dvJ-Zl-PwF" secondAttribute="trailing" constant="20" id="gYN-KQ-IyA"/>
                             <constraint firstItem="dvJ-Zl-PwF" firstAttribute="centerX" secondItem="HTM-JE-5x5" secondAttribute="centerX" id="kE8-Bt-Qr4"/>
@@ -416,24 +427,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psY-ec-YFZ">
-                                <rect key="frame" x="87.5" y="408.5" width="200" height="150"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="1CP-Yh-oDA"/>
-                                    <constraint firstAttribute="height" constant="150" id="zjr-CS-V01"/>
-                                </constraints>
-                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="面朝屏幕解锁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccT-Kf-Rw8">
+                                <rect key="frame" x="135" y="596" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="psY-ec-YFZ" firstAttribute="centerY" secondItem="9r0-ER-9II" secondAttribute="centerY" constant="150" id="7Bk-gH-bVn"/>
-                            <constraint firstItem="psY-ec-YFZ" firstAttribute="centerX" secondItem="9r0-ER-9II" secondAttribute="centerX" id="Lwr-Te-Xzo"/>
+                            <constraint firstItem="QBk-Yc-NXB" firstAttribute="top" secondItem="ccT-Kf-Rw8" secondAttribute="bottom" constant="50" id="bOV-6t-Fr3"/>
+                            <constraint firstItem="ccT-Kf-Rw8" firstAttribute="centerX" secondItem="9r0-ER-9II" secondAttribute="centerX" id="kQn-Go-8vi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="体验解锁过程" id="UfY-ja-Sv3"/>
                     <connections>
-                        <outlet property="webView" destination="psY-ec-YFZ" id="kHd-FE-7cI"/>
+                        <outlet property="label" destination="ccT-Kf-Rw8" id="dd2-sq-30C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jq-Yh-Dw3" userLabel="First Responder" sceneMemberID="firstResponder"/>

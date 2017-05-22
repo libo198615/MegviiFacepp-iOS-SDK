@@ -15,6 +15,8 @@
 #import "MGFaceHeader.h"
 #import "MGAliyunOSS.h"
 
+#define MGColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface TakePhoto () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic,strong) UIImagePickerController *imagePickerController;
@@ -48,8 +50,13 @@
     self.markManager = markManager;
     _saveBtn.userInteractionEnabled = NO;
     _saveBtn.backgroundColor = [UIColor grayColor];
+    _saveBtn.backgroundColor = MGColorFromRGB(0xc3c3c3);
     
     [_textField addTarget:self action:@selector(returnKey) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    _saveBtn.layer.masksToBounds = YES;
+    _saveBtn.layer.cornerRadius = 7;
+    _saveBtn.titleLabel.font = [UIFont systemFontOfSize:18];
 }
 
 
@@ -80,7 +87,7 @@
         _textField.text = @"未检测到人脸";
         [_saveBtn setTitle:@"重新录入" forState:UIControlStateNormal];
         _saveBtn.userInteractionEnabled = YES;
-        _saveBtn.backgroundColor = [UIColor blueColor];
+        _saveBtn.backgroundColor = MGColorFromRGB(0x21a9e3);
         _saveBtn.tag = 0;
     }
     [self.markManager endDetectionFrame];
@@ -91,7 +98,7 @@
         NSLog(@"%@", NSStringFromCGRect(info1.rect));
         _saveBtn.userInteractionEnabled = YES;
         _saveBtn.tag = 1;
-        _saveBtn.backgroundColor = [UIColor blueColor];
+        _saveBtn.backgroundColor = MGColorFromRGB(0x21a9e3);
         
         NSString *userPhoneName = [[UIDevice currentDevice] name];
         _textField.text = userPhoneName;
@@ -101,7 +108,7 @@
 }
 
 - (void)showAlert{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"输入用户名" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"输入姓名" message:nil preferredStyle:UIAlertControllerStyleAlert];
     //增加确定按钮；
     [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UITextField *tf = alertController.textFields.firstObject;
@@ -116,7 +123,7 @@
     
     //定义第一个输入框；
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.placeholder = @"请输入用户名";
+        textField.placeholder = @"请输入姓名";
     }];
     
     [self presentViewController:alertController animated:true completion:nil];
