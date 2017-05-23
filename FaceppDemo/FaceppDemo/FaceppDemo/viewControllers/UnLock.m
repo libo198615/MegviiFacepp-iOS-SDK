@@ -43,25 +43,27 @@
 - (void)detectFinishedWithImage:(UIImage *)image{
     dispatch_async(dispatch_get_main_queue(), ^{
         _label.hidden = YES;
-    });
-    NSInteger count = [[NSUserDefaults standardUserDefaults] integerForKey:MG_success_unlock_count];
-    count ++;
-    [[NSUserDefaults standardUserDefaults] setInteger:count forKey:MG_success_unlock_count];
-    _imageview.image = [UIImage imageNamed:@"unlock"];
-    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"恭喜" message:@"解锁成功" preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction *action = [UIAlertAction actionWithTitle:@"上传图像" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        [self.navigationController popViewControllerAnimated:YES];
-//        [self uploadData:UIImageJPEGRepresentation(image, 1)];
-//    }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        [self.navigationController popViewControllerAnimated:YES];
-        [self uploadData:UIImageJPEGRepresentation(image, 1)];
-    }];
-//    [vc addAction:action];
-    [vc addAction:cancel];
-    [self presentViewController:vc animated:YES completion:^{
+        _imageview.image = [UIImage imageNamed:@"unlock"];
+        NSInteger count = [[NSUserDefaults standardUserDefaults] integerForKey:MG_success_unlock_count];
+        count ++;
+        [[NSUserDefaults standardUserDefaults] setInteger:count forKey:MG_success_unlock_count];
         
-    }];
+        UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"恭喜" message:@"解锁成功" preferredStyle:UIAlertControllerStyleAlert];
+        //    UIAlertAction *action = [UIAlertAction actionWithTitle:@"上传图像" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //        [self.navigationController popViewControllerAnimated:YES];
+        //        [self uploadData:UIImageJPEGRepresentation(image, 1)];
+        //    }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:YES];
+            [self uploadData:UIImageJPEGRepresentation(image, 1)];
+        }];
+        //    [vc addAction:action];
+        [vc addAction:cancel];
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    });
+    
 }
 
 - (void)uploadData:(NSData *)data {
