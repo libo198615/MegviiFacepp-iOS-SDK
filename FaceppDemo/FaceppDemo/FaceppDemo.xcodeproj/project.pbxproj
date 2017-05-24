@@ -13,11 +13,11 @@
 		093374BE1ECD8D21005AC61A /* TakePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 093374B61ECD8D21005AC61A /* TakePhoto.m */; };
 		093374BF1ECD8D21005AC61A /* UnLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 093374B81ECD8D21005AC61A /* UnLock.m */; };
 		093374C01ECD8D21005AC61A /* UnLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 093374BA1ECD8D21005AC61A /* UnLockDemo.m */; };
-		093374CB1ECD8EAD005AC61A /* megviifacepp_0_4_7_model in Resources */ = {isa = PBXBuildFile; fileRef = 093374C21ECD8EAD005AC61A /* megviifacepp_0_4_7_model */; };
 		093374CD1ECDA2C5005AC61A /* scan.gif in Resources */ = {isa = PBXBuildFile; fileRef = 093374CC1ECDA2C5005AC61A /* scan.gif */; };
 		093374CF1ECDA651005AC61A /* unLockLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 093374CE1ECDA651005AC61A /* unLockLogo.png */; };
 		093374D11ECDBD00005AC61A /* libMGFacepp-0.4.7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 093374C11ECD8EAD005AC61A /* libMGFacepp-0.4.7.a */; };
 		094C022E1ED2F10B009C6085 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 094C022D1ED2F10B009C6085 /* unlock.png */; };
+		095AD9BB1ED5184700B6CDAA /* megviifacepp_0_4_7_model in Resources */ = {isa = PBXBuildFile; fileRef = 095AD9BA1ED5184700B6CDAA /* megviifacepp_0_4_7_model */; };
 		09FDB05A1ECEF0CD007DB8B5 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FDB0591ECEF0CD007DB8B5 /* lock.png */; };
 		140FF1161D8E601800013A3E /* MGBaseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140604FC1D8E5EE600D71080 /* MGBaseKit.framework */; };
 		140FF1181D8E601D00013A3E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142F341D1D7E97DA00A05A5A /* CoreMedia.framework */; };
@@ -114,7 +114,6 @@
 		093374B91ECD8D21005AC61A /* UnLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnLockDemo.h; sourceTree = "<group>"; };
 		093374BA1ECD8D21005AC61A /* UnLockDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnLockDemo.m; sourceTree = "<group>"; };
 		093374C11ECD8EAD005AC61A /* libMGFacepp-0.4.7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMGFacepp-0.4.7.a"; sourceTree = "<group>"; };
-		093374C21ECD8EAD005AC61A /* megviifacepp_0_4_7_model */ = {isa = PBXFileReference; lastKnownFileType = file; path = megviifacepp_0_4_7_model; sourceTree = "<group>"; };
 		093374C31ECD8EAD005AC61A /* MGAlgorithmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAlgorithmInfo.h; sourceTree = "<group>"; };
 		093374C41ECD8EAD005AC61A /* MGFaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceInfo.h; sourceTree = "<group>"; };
 		093374C51ECD8EAD005AC61A /* MGFacepp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFacepp.h; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		093374CC1ECDA2C5005AC61A /* scan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scan.gif; sourceTree = "<group>"; };
 		093374CE1ECDA651005AC61A /* unLockLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unLockLogo.png; sourceTree = "<group>"; };
 		094C022D1ED2F10B009C6085 /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
+		095AD9BA1ED5184700B6CDAA /* megviifacepp_0_4_7_model */ = {isa = PBXFileReference; lastKnownFileType = file; name = megviifacepp_0_4_7_model; path = ../../../MGFacepp/MegviiFacepp_C_SDK/megviifacepp_0_4_7_model; sourceTree = "<group>"; };
 		09FDB0591ECEF0CD007DB8B5 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		140604FC1D8E5EE600D71080 /* MGBaseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MGBaseKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/V2SDKDemo-epjzkrsxflxuxtfbehqbuzoevuka/Build/Products/Debug-iphoneos/MGBaseKit.framework"; sourceTree = "<group>"; };
 		1411508F1E9CC9B70016800E /* 81_points_position.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 81_points_position.jpg; sourceTree = "<group>"; };
@@ -287,8 +287,8 @@
 		140605001D8E5F1000D71080 /* MGFaceppSDK */ = {
 			isa = PBXGroup;
 			children = (
+				095AD9BA1ED5184700B6CDAA /* megviifacepp_0_4_7_model */,
 				093374C11ECD8EAD005AC61A /* libMGFacepp-0.4.7.a */,
-				093374C21ECD8EAD005AC61A /* megviifacepp_0_4_7_model */,
 				093374C31ECD8EAD005AC61A /* MGAlgorithmInfo.h */,
 				093374C41ECD8EAD005AC61A /* MGFaceInfo.h */,
 				093374C51ECD8EAD005AC61A /* MGFacepp.h */,
@@ -639,7 +639,6 @@
 				1432EDDC1E24B51B00131E39 /* screen-1.png in Resources */,
 				1432EDCD1E24B51B00131E39 /* area-1.png in Resources */,
 				1432ED9B1E24B51300131E39 /* TextCell.xib in Resources */,
-				093374CB1ECD8EAD005AC61A /* megviifacepp_0_4_7_model in Resources */,
 				1432EDDF1E24B51B00131E39 /* side-0.png in Resources */,
 				14A0AACB1E9F4FEB008B9443 /* Localizable.strings in Resources */,
 				1433D0F51E275EC900814ADD /* BaseCell.xib in Resources */,
@@ -662,6 +661,7 @@
 				093374CD1ECDA2C5005AC61A /* scan.gif in Resources */,
 				141D10031E4968CF00BC80F5 /* IMG_0007.jpg in Resources */,
 				093374CF1ECDA651005AC61A /* unLockLogo.png in Resources */,
+				095AD9BB1ED5184700B6CDAA /* megviifacepp_0_4_7_model in Resources */,
 				1432EDD21E24B51B00131E39 /* faceinfo-1.png in Resources */,
 				141150941E9DEDA40016800E /* skin.png in Resources */,
 				146C28E21D7E8EF200124368 /* VideoVert.glsl in Resources */,
