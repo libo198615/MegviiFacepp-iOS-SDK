@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		093374AC1ECD8BE3005AC61A /* megviifacepp_0_4_7_model in Resources */ = {isa = PBXBuildFile; fileRef = 093374AB1ECD8BE3005AC61A /* megviifacepp_0_4_7_model */; };
+		0951DEA91ED9625000D45D78 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0951DEA81ED9625000D45D78 /* MobileCoreServices.framework */; };
+		0951DEAB1ED9625B00D45D78 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0951DEAA1ED9625B00D45D78 /* MediaPlayer.framework */; };
+		0951DEAE1ED969C600D45D78 /* MGLandmarkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0951DEAD1ED969C600D45D78 /* MGLandmarkVC.m */; };
 		1432EE161E24C1EB00131E39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432EE151E24C1EB00131E39 /* main.m */; };
 		1432EE191E24C1EB00131E39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432EE181E24C1EB00131E39 /* AppDelegate.m */; };
 		1432EE1C1E24C1EB00131E39 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1432EE1B1E24C1EB00131E39 /* ViewController.mm */; };
@@ -23,6 +26,12 @@
 
 /* Begin PBXFileReference section */
 		093374AB1ECD8BE3005AC61A /* megviifacepp_0_4_7_model */ = {isa = PBXFileReference; lastKnownFileType = file; name = megviifacepp_0_4_7_model; path = ../MGFacepp/MegviiFacepp_C_SDK/megviifacepp_0_4_7_model; sourceTree = "<group>"; };
+		0951DEA41ED961ED00D45D78 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		0951DEA61ED961FC00D45D78 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		0951DEA81ED9625000D45D78 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0951DEAA1ED9625B00D45D78 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		0951DEAC1ED969C600D45D78 /* MGLandmarkVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLandmarkVC.h; sourceTree = "<group>"; };
+		0951DEAD1ED969C600D45D78 /* MGLandmarkVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLandmarkVC.m; sourceTree = "<group>"; };
 		1432EE111E24C1EB00131E39 /* MGFaceppSDKTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGFaceppSDKTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1432EE151E24C1EB00131E39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1432EE171E24C1EB00131E39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0951DEAB1ED9625B00D45D78 /* MediaPlayer.framework in Frameworks */,
+				0951DEA91ED9625000D45D78 /* MobileCoreServices.framework in Frameworks */,
 				14D6A9231E8BA9A700AF4B06 /* libMGFacepp-0.4.7.a in Frameworks */,
 				14FFF27B1E24C3C900A5A7EF /* AVFoundation.framework in Frameworks */,
 				14FFF2791E24C3C600A5A7EF /* CoreMedia.framework in Frameworks */,
@@ -79,6 +90,8 @@
 				1432EE181E24C1EB00131E39 /* AppDelegate.m */,
 				1432EE1A1E24C1EB00131E39 /* ViewController.h */,
 				1432EE1B1E24C1EB00131E39 /* ViewController.mm */,
+				0951DEAC1ED969C600D45D78 /* MGLandmarkVC.h */,
+				0951DEAD1ED969C600D45D78 /* MGLandmarkVC.m */,
 				1432EE1D1E24C1EB00131E39 /* Main.storyboard */,
 				1432EE201E24C1EB00131E39 /* Assets.xcassets */,
 				1432EE221E24C1EB00131E39 /* LaunchScreen.storyboard */,
@@ -101,6 +114,10 @@
 		1432EE2C1E24C32800131E39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0951DEAA1ED9625B00D45D78 /* MediaPlayer.framework */,
+				0951DEA81ED9625000D45D78 /* MobileCoreServices.framework */,
+				0951DEA61ED961FC00D45D78 /* PhotosUI.framework */,
+				0951DEA41ED961ED00D45D78 /* Photos.framework */,
 				14D6A9221E8BA9A700AF4B06 /* libMGFacepp-0.4.7.a */,
 				14FFF27A1E24C3C900A5A7EF /* AVFoundation.framework */,
 				14FFF2781E24C3C600A5A7EF /* CoreMedia.framework */,
@@ -185,6 +202,7 @@
 			files = (
 				1432EE1C1E24C1EB00131E39 /* ViewController.mm in Sources */,
 				1432EE191E24C1EB00131E39 /* AppDelegate.m in Sources */,
+				0951DEAE1ED969C600D45D78 /* MGLandmarkVC.m in Sources */,
 				1432EE161E24C1EB00131E39 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
