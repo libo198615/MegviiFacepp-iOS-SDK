@@ -17,6 +17,7 @@
 		093374CF1ECDA651005AC61A /* unLockLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 093374CE1ECDA651005AC61A /* unLockLogo.png */; };
 		093374D11ECDBD00005AC61A /* libMGFacepp-0.4.7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 093374C11ECD8EAD005AC61A /* libMGFacepp-0.4.7.a */; };
 		094C022E1ED2F10B009C6085 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 094C022D1ED2F10B009C6085 /* unlock.png */; };
+		0951DE961ED913BB00D45D78 /* MGLandmarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0951DE951ED913BB00D45D78 /* MGLandmarkView.m */; };
 		095AD9BB1ED5184700B6CDAA /* megviifacepp_0_4_7_model in Resources */ = {isa = PBXBuildFile; fileRef = 095AD9BA1ED5184700B6CDAA /* megviifacepp_0_4_7_model */; };
 		09FDB05A1ECEF0CD007DB8B5 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FDB0591ECEF0CD007DB8B5 /* lock.png */; };
 		140FF1161D8E601800013A3E /* MGBaseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140604FC1D8E5EE600D71080 /* MGBaseKit.framework */; };
@@ -124,6 +125,8 @@
 		093374CC1ECDA2C5005AC61A /* scan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scan.gif; sourceTree = "<group>"; };
 		093374CE1ECDA651005AC61A /* unLockLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unLockLogo.png; sourceTree = "<group>"; };
 		094C022D1ED2F10B009C6085 /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
+		0951DE941ED913BB00D45D78 /* MGLandmarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLandmarkView.h; sourceTree = "<group>"; };
+		0951DE951ED913BB00D45D78 /* MGLandmarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLandmarkView.m; sourceTree = "<group>"; };
 		095AD9BA1ED5184700B6CDAA /* megviifacepp_0_4_7_model */ = {isa = PBXFileReference; lastKnownFileType = file; name = megviifacepp_0_4_7_model; path = ../../../MGFacepp/MegviiFacepp_C_SDK/megviifacepp_0_4_7_model; sourceTree = "<group>"; };
 		09FDB0591ECEF0CD007DB8B5 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		140604FC1D8E5EE600D71080 /* MGBaseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MGBaseKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/V2SDKDemo-epjzkrsxflxuxtfbehqbuzoevuka/Build/Products/Debug-iphoneos/MGBaseKit.framework"; sourceTree = "<group>"; };
@@ -284,6 +287,15 @@
 			path = viewControllers;
 			sourceTree = "<group>";
 		};
+		0951DE931ED913AC00D45D78 /* MGLandmark */ = {
+			isa = PBXGroup;
+			children = (
+				0951DE941ED913BB00D45D78 /* MGLandmarkView.h */,
+				0951DE951ED913BB00D45D78 /* MGLandmarkView.m */,
+			);
+			path = MGLandmark;
+			sourceTree = "<group>";
+		};
 		140605001D8E5F1000D71080 /* MGFaceppSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +433,7 @@
 		1433D0CE1E275DE200814ADD /* FaceppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0951DE931ED913AC00D45D78 /* MGLandmark */,
 				093374AD1ECD8D21005AC61A /* AliyunOSS */,
 				093374B11ECD8D21005AC61A /* viewControllers */,
 				14A0AAB01E9F4C41008B9443 /* Base.lproj */,
@@ -725,6 +738,7 @@
 				1432ED931E24B51300131E39 /* MGFaceModelArray.m in Sources */,
 				14FFF3011E25FB6100A5A7EF /* MainViewController.m in Sources */,
 				1433D0E31E275E7D00814ADD /* MGFaceLicenseHandle.m in Sources */,
+				0951DE961ED913BB00D45D78 /* MGLandmarkView.m in Sources */,
 				1433D0D81E275DE200814ADD /* AppDelegate.m in Sources */,
 				1432ED8B1E24B51300131E39 /* GLESUtils.m in Sources */,
 				1432EDFA1E24BAC400131E39 /* MGOpenGLRenderer.m in Sources */,

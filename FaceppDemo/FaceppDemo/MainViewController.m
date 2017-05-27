@@ -8,8 +8,8 @@
 
 #import "MainViewController.h"
 #import "MGFaceLicenseHandle.h"
-
 #import "MGFacepp.h"
+#import "MGLandmarkView.h"
 
 @interface MainViewController ()
 
@@ -70,6 +70,18 @@
     [self.messageView setText:tempString];
 
     
+    [self drawImage:[UIImage imageNamed:@"background.png"]];
+}
+
+- (void)drawImage:(UIImage *)image{
+//    CustomView *customView = [[CustomView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+    MGLandmarkView *view = [[MGLandmarkView alloc] initWithFrame:self.view.bounds];
+    view.image = image;
+    view.center = self.view.center;
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
+//    view.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+//    view.center = self.view.center;
     
 }
 

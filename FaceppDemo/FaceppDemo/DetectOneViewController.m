@@ -9,11 +9,12 @@
 #import "DetectOneViewController.h"
 #import "MGFacepp.h"
 #import "MGFaceInfo.h"
+#import "MGLandmarkView.h"
 
 @interface DetectOneViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *detectImage;
 @property (weak, nonatomic) IBOutlet UILabel *messageView;
-
+@property (nonatomic, strong) MGLandmarkView *imageView;
 @property (nonatomic, strong) MGFacepp *markManager;
 
 @end
@@ -32,6 +33,8 @@
                                                   config.orientation = 0;
                                               }];
     self.markManager = markManager;
+    
+    [self drawLandmarkInImage:[UIImage imageNamed:@"background.png"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +78,18 @@
     self.messageView.text = faceLog;
     
     NSLog(@"%@", faceArray);
+}
+
+- (void)drawLandmarkInImage:(UIImage *)image{
+    _imageView = [[MGLandmarkView alloc] init];
+//    _imageView.image = image;
+    [self.view addSubview:_imageView];
+    [self performSelector:@selector(delay) withObject:nil afterDelay:1];
+}
+
+- (void)delay{
+    _imageView.frame = self.view.bounds;
+    [self.view setNeedsDisplay];
 }
 
 
