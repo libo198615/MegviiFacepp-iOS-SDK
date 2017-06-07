@@ -195,7 +195,8 @@
     for (NSValue *value in points) {
         CGPoint point = value.CGPointValue;
         NSLog(@"%f,%f",point.y,point.x);
-        CGContextFillEllipseInRect(ctx, CGRectMake(point.x, point.y, 10, 10));
+        NSInteger width = 5;
+        CGContextFillEllipseInRect(ctx, CGRectMake(point.x+width/2, point.y+width/2, width, width));
     }
     
     // make image out of bitmap context
